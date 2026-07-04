@@ -1,0 +1,212 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('/learning-claude/fonts/NunitoSans-var.woff2') format('woff2');
+  font-weight: 200 1000;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Silkscreen';
+  src: url('/learning-claude/fonts/Silkscreen-400.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Silkscreen';
+  src: url('/learning-claude/fonts/Silkscreen-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@theme {
+  --color-*: initial;
+  --color-bg: oklch(0.16 0.014 55);
+  --color-surface: oklch(0.21 0.018 55);
+  --color-surface-2: oklch(0.26 0.02 55);
+  --color-edge: oklch(0.32 0.02 55);
+  --color-ink: oklch(0.95 0.01 75);
+  --color-muted: oklch(0.72 0.02 70);
+  --color-brand: oklch(0.7 0.19 45);
+  --color-brand-deep: oklch(0.55 0.16 42);
+  --color-on-brand: oklch(0.15 0.02 45);
+  --color-success: oklch(0.75 0.17 145);
+  --color-success-deep: oklch(0.45 0.12 145);
+  --color-error: oklch(0.62 0.21 25);
+  --color-error-deep: oklch(0.42 0.15 25);
+  --color-gold: oklch(0.82 0.14 85);
+  --color-locked: oklch(0.4 0.01 55);
+
+  --font-sans: 'Nunito Sans', system-ui, sans-serif;
+  --font-pixel: 'Silkscreen', monospace;
+}
+
+html {
+  background: var(--color-bg);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-bg);
+  min-height: 100dvh;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* Botão arcade 3D — a assinatura visual do app */
+.btn-3d {
+  cursor: pointer;
+  border-radius: 12px;
+  font-weight: 800;
+  transition:
+    transform 80ms ease-out,
+    box-shadow 80ms ease-out,
+    background-color 150ms ease-out;
+  touch-action: manipulation;
+}
+.btn-3d:active:not(:disabled) {
+  transform: translateY(2px);
+}
+.btn-3d:disabled {
+  cursor: default;
+  background: var(--color-surface-2);
+  color: var(--color-muted);
+  box-shadow: 0 4px 0 oklch(0.18 0.015 55);
+}
+.btn-brand {
+  background: var(--color-brand);
+  color: var(--color-on-brand);
+  box-shadow: 0 4px 0 var(--color-brand-deep);
+}
+.btn-brand:active:not(:disabled) {
+  box-shadow: 0 2px 0 var(--color-brand-deep);
+}
+.btn-ghost {
+  background: var(--color-surface-2);
+  color: var(--color-ink);
+  box-shadow: 0 4px 0 oklch(0.18 0.015 55);
+}
+.btn-ghost:active:not(:disabled) {
+  box-shadow: 0 2px 0 oklch(0.18 0.015 55);
+}
+.btn-success {
+  background: var(--color-success);
+  color: oklch(0.16 0.03 145);
+  box-shadow: 0 4px 0 var(--color-success-deep);
+}
+.btn-success:active:not(:disabled) {
+  box-shadow: 0 2px 0 var(--color-success-deep);
+}
+
+/* Opção de resposta */
+.option-card {
+  cursor: pointer;
+  border-radius: 12px;
+  background: var(--color-surface-2);
+  border: 2px solid var(--color-edge);
+  box-shadow: 0 3px 0 var(--color-edge);
+  transition:
+    border-color 150ms ease-out,
+    background-color 150ms ease-out,
+    transform 80ms ease-out,
+    box-shadow 80ms ease-out;
+  touch-action: manipulation;
+}
+.option-card:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--color-edge);
+}
+.option-selected {
+  border-color: var(--color-brand);
+  box-shadow: 0 3px 0 var(--color-brand-deep);
+  background: color-mix(in oklch, var(--color-brand) 12%, var(--color-surface-2));
+}
+.option-correct {
+  border-color: var(--color-success);
+  box-shadow: 0 3px 0 var(--color-success-deep);
+  background: color-mix(in oklch, var(--color-success) 14%, var(--color-surface-2));
+}
+.option-wrong {
+  border-color: var(--color-error);
+  box-shadow: 0 3px 0 var(--color-error-deep);
+  background: color-mix(in oklch, var(--color-error) 14%, var(--color-surface-2));
+  animation: shake 300ms ease-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    translate: 0;
+  }
+  25% {
+    translate: -4px;
+  }
+  50% {
+    translate: 4px;
+  }
+  75% {
+    translate: -4px;
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.feedback-rise {
+  animation: rise 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes pulse-node {
+  0%,
+  100% {
+    box-shadow:
+      0 5px 0 var(--color-brand-deep),
+      0 0 0 0 color-mix(in oklch, var(--color-brand) 45%, transparent);
+  }
+  60% {
+    box-shadow:
+      0 5px 0 var(--color-brand-deep),
+      0 0 0 12px transparent;
+  }
+}
+.node-current {
+  animation: pulse-node 2s ease-out infinite;
+}
+
+@keyframes pop-in {
+  from {
+    scale: 0.4;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+.pop-in {
+  animation: pop-in 350ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .option-wrong,
+  .feedback-rise,
+  .node-current,
+  .pop-in {
+    animation: none;
+  }
+  .btn-3d,
+  .option-card {
+    transition: none;
+  }
+}
