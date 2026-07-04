@@ -2,17 +2,17 @@
 
 **Como Duolingo, mas para aprender Claude.**
 
-PWA gamificado em português para aprender a usar o Claude e o Claude Code de verdade: 7 níveis progressivos, 30 lições, 148 exercícios com feedback imediato, XP, estrelas e streak diário.
+PWA gamificado em português para aprender a usar o Claude e o Claude Code de verdade: 7 níveis progressivos, 31 lições, 155 exercícios com feedback imediato, XP, estrelas e streak diário.
 
 ## Níveis
 
-1. **Uso** — Chat, Code, Cowork, modelos e Projects
+1. **Uso** — Chat, Code, Cowork, modelos, Projects e imagens/arquivos
 2. **Prompting** — bons prompts, contexto, CLAUDE.md, plan mode, economia de tokens
 3. **Ferramentas & MCP** — conectores, GitHub, permissões, slash commands, automação/notas/CRM
 4. **Subagentes** — contexto isolado, paralelismo, orquestração
 5. **Skills** — SKILL.md, skills de projeto vs pessoais, plugins
 6. **Segurança** — API keys, sandbox, menor privilégio, prompt injection
-7. **Autonomia** — hooks, rotinas agendadas, loops, agentes com juízo
+7. **Autonomia** — hooks, rotinas agendadas, loops, autonomia gradual e com juízo
 
 ## Rodando localmente
 

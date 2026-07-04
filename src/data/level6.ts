@@ -88,9 +88,9 @@ export const level6: Level = {
           question: 'O que é um sandbox no contexto do Claude Code?',
           options: [
             'Um ambiente isolado onde comandos rodam sem afetar o resto do sistema',
-            'Uma caixa de areia literal',
-            'Um jogo',
-            'Um tipo de arquivo',
+            'Um registro de todos os comandos já executados na sessão',
+            'Uma cópia de segurança automática do projeto',
+            'Um modo que deixa as respostas mais criativas',
           ],
           correct: 0,
           explanation:
@@ -107,10 +107,10 @@ export const level6: Level = {
           type: 'mc',
           question: 'Antes de o Claude executar "rm -rf pasta/", o que o sistema de permissões faz?',
           options: [
-            'Executa em silêncio',
+            'Executa em silêncio, já que está na allowlist padrão',
             'Pede sua confirmação, porque é um comando destrutivo',
-            'Formata o disco',
-            'Manda e-mail para seu chefe',
+            'Pede confirmação só se a pasta tiver mais de 1GB',
+            'Substitui automaticamente por um comando mais seguro',
           ],
           correct: 1,
           explanation:
@@ -140,9 +140,9 @@ export const level6: Level = {
           question: 'O que é prompt injection?',
           options: [
             'Conteúdo externo malicioso (página, e-mail, comentário) tentando dar ordens ao agente',
-            'Uma vacina',
-            'Um atalho de produtividade',
-            'Um tipo de banco de dados',
+            'Uma técnica para deixar as respostas mais rápidas',
+            'Um recurso para aumentar o tamanho do contexto',
+            'Um jeito de treinar um modelo do zero',
           ],
           correct: 0,
           explanation:

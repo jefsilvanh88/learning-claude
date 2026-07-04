@@ -247,5 +247,70 @@ export const level1: Level = {
         },
       ],
     },
+    {
+      id: '1-5',
+      title: 'Imagens, arquivos e anexos',
+      exercises: [
+        {
+          type: 'mc',
+          question: 'O Claude consegue interpretar o conteúdo de uma imagem que você anexa?',
+          options: [
+            'Sim — descreve, lê texto na imagem, analisa gráficos e diagramas',
+            'Não, só entende texto digitado',
+            'Só se a imagem tiver menos de 10 pixels',
+            'Só imagens em preto e branco',
+          ],
+          correct: 0,
+          explanation:
+            'O Claude enxerga: fotos, prints de tela, gráficos, diagramas e até texto manuscrito dentro de uma imagem viram contexto real para a resposta.',
+        },
+        {
+          type: 'mc',
+          question: 'Você tem uma nota fiscal em PDF e quer extrair os valores. O que fazer?',
+          options: [
+            'Anexar o PDF direto na conversa e pedir a extração',
+            'Digitar cada valor à mão antes de perguntar qualquer coisa',
+            'Tirar uma foto da tela mostrando o PDF aberto',
+            'Não dá, PDFs não são suportados',
+          ],
+          correct: 0,
+          explanation:
+            'PDF, planilha, imagem: anexe o arquivo original. É mais rápido e mais preciso do que transcrever à mão antes de perguntar.',
+        },
+        {
+          type: 'tf',
+          statement: 'Uma planilha anexada pode ser lida e analisada pelo Claude, célula por célula.',
+          correct: true,
+          explanation:
+            'Planilhas anexadas viram dados de verdade para o Claude trabalhar — somar colunas, achar inconsistências, comparar linhas.',
+        },
+        {
+          type: 'mc',
+          question: 'Por que anexar o arquivo original é melhor do que descrever seu conteúdo de memória?',
+          options: [
+            'Porque os detalhes que importam (números exatos, formatação, o erro específico) costumam estar exatamente na fonte',
+            'Não faz diferença nenhuma',
+            'Porque arquivos são mais bonitos',
+            'Porque só assim o Claude aceita responder',
+          ],
+          correct: 0,
+          explanation:
+            'Memória humana escorrega em detalhe. A fonte original elimina a adivinhação — vale para imagem, PDF ou trecho de código.',
+        },
+        {
+          type: 'mc',
+          question: 'Qual é um bom uso de imagem anexada?',
+          options: [
+            'Mandar o print de um erro no navegador para o Claude diagnosticar a causa',
+            'Perguntar qual é a cor favorita do Claude',
+            'Pedir para o Claude "sentir" a textura da foto',
+            'Imagem nunca ajuda em nada prático',
+          ],
+          correct: 0,
+          explanation:
+            'Erros visuais (tela travada, mensagem de exceção, layout quebrado) são resolvidos mais rápido mostrando a imagem do que descrevendo com palavras.',
+        },
+      ],
+    },
   ],
 }

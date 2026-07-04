@@ -15,9 +15,9 @@ export const level7: Level = {
           question: 'O que são hooks no Claude Code?',
           options: [
             'Scripts que rodam automaticamente em eventos: antes/depois de ferramentas, no fim da sessão…',
-            'Ganchos de pesca',
-            'Um framework de frontend',
-            'Erros de digitação',
+            'Anotações que o próprio Claude faz para si durante o raciocínio',
+            'Atalhos de teclado configuráveis pelo usuário',
+            'Um tipo de skill que só funciona com MCP',
           ],
           correct: 0,
           explanation:
@@ -75,9 +75,9 @@ export const level7: Level = {
           question: 'O que é uma rotina/trigger agendada para um agente?',
           options: [
             'Uma tarefa que dispara sozinha num horário: "toda manhã, resuma os e-mails novos"',
-            'Um alarme de celular',
-            'Uma reunião recorrente',
-            'Um vírus',
+            'Uma tarefa que só roda se você estiver com o app aberto no momento',
+            'Um comando que precisa ser digitado manualmente todo dia',
+            'Um lembrete que só aparece, sem executar nada',
           ],
           correct: 0,
           explanation:
@@ -135,9 +135,9 @@ export const level7: Level = {
           question: 'O que é "babysitting" de PR com um agente?',
           options: [
             'O agente monitora o PR: CI falhou, ele corrige; reviewer comentou, ele responde — até o merge',
-            'Cuidar de crianças',
-            'Deletar o PR',
-            'Aprovar sem ler',
+            'Aprovar automaticamente qualquer mudança, sem revisão nenhuma',
+            'Fechar o PR assim que ele é aberto',
+            'Escrever a descrição do PR uma única vez, no início',
           ],
           correct: 0,
           explanation:
@@ -227,6 +227,31 @@ export const level7: Level = {
           correct: 0,
           explanation:
             'As camadas se somam: agendamento (quando), subagentes (escala), skills (como), hooks (garantias), PR (portão humano). Isso é um sistema de IA operando de verdade.',
+        },
+        {
+          type: 'mc',
+          question: 'Antes de automatizar uma tarefa nova com autonomia alta, o que fazer primeiro?',
+          options: [
+            'Rodar supervisionado algumas vezes, ver o resultado, só então automatizar',
+            'Automatizar direto e ver o que acontece',
+            'Perguntar para outro agente se ele autoriza',
+            'Esperar a tarefa dar errado uma vez para aprender',
+          ],
+          correct: 0,
+          explanation:
+            'Confiança se constrói observando o comportamento em casos reais e supervisionados antes de tirar as mãos do volante.',
+        },
+        {
+          type: 'order',
+          question: 'Ordene como aumentar a autonomia de um agente com segurança, do início ao fim:',
+          steps: [
+            'Supervisionar cada ação manualmente',
+            'Pré-aprovar as ações repetitivas e seguras',
+            'Deixar rodar sozinho em ambiente isolado, revisando o resultado depois',
+            'Estender a mesma automação a ambientes mais críticos, só depois de confiança acumulada',
+          ],
+          explanation:
+            'Autonomia é ganha em degraus, não concedida de uma vez: supervisão total → allowlist → isolamento sem supervisão → produção. Pular degraus é o que costuma dar errado.',
         },
       ],
     },
