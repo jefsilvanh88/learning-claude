@@ -321,5 +321,69 @@ export const level3: Level = {
         },
       ],
     },
+    {
+      id: '3-6',
+      title: 'Possibilidades: automação, notas e CRM',
+      exercises: [
+        {
+          type: 'mc',
+          question: 'O que ferramentas de automação (como n8n ou Zapier) permitem quando conectadas ao Claude?',
+          options: [
+            'Transformar o Claude em parte de um fluxo automático: ex. todo lead novo é qualificado e registrado sozinho',
+            'Nada, são incompatíveis com IA',
+            'Apenas enviar notificações por e-mail',
+            'Substituir o Claude por completo',
+          ],
+          correct: 0,
+          explanation:
+            'Automação + Claude é o Claude virando um passo de um pipeline maior: recebe um evento, decide ou escreve algo, entrega para o próximo passo — sem você acionar manualmente.',
+        },
+        {
+          type: 'mc',
+          question: 'O que significa usar o Claude como "segundo cérebro" junto de um app de notas (ex. Obsidian)?',
+          options: [
+            'O Claude lê e organiza suas próprias anotações para responder e sintetizar a partir do que você já escreveu',
+            'O Claude apaga notas antigas automaticamente',
+            'É um jogo de memória',
+            'Só funciona se as notas forem públicas',
+          ],
+          correct: 0,
+          explanation:
+            'Conectado ao seu cofre de notas, o Claude vira uma camada de busca e síntese sobre seu próprio conhecimento acumulado — não gera do zero, recupera e conecta o que você já registrou.',
+        },
+        {
+          type: 'tf',
+          statement: 'Um CRM conectado ao Claude pode deixar o agente resumir o histórico de um cliente e sugerir o próximo passo, sem você abrir o sistema manualmente.',
+          correct: true,
+          explanation:
+            'Essa é a promessa da integração: o Claude consulta o CRM pelo MCP, lê o histórico e devolve uma recomendação pronta — você só decide e age.',
+        },
+        {
+          type: 'mc',
+          question: 'O que dá liberdade para conectar praticamente qualquer sistema ao Claude, além dos conectores oficiais da Anthropic?',
+          options: [
+            'O ecossistema aberto de servidores MCP, feitos pela comunidade e por empresas terceiras',
+            'Não dá para conectar mais nada além do oficial',
+            'É preciso reescrever o Claude do zero',
+            'Só funciona com sistemas da Google',
+          ],
+          correct: 0,
+          explanation:
+            'Por ser um protocolo aberto, qualquer empresa ou desenvolvedor pode publicar um servidor MCP — automação, CRM, banco de dados, o que for. A lista de possibilidades cresce fora do controle da Anthropic.',
+        },
+        {
+          type: 'order',
+          question: 'Ordene como avaliar um conector novo antes de instalar:',
+          steps: [
+            'Identificar a necessidade real: o que você quer automatizar ou acessar',
+            'Verificar quem mantém o servidor MCP e sua reputação',
+            'Entender o escopo de acesso que ele está pedindo',
+            'Testar num caso de baixo risco antes de confiar tarefas críticas a ele',
+          ],
+          explanation:
+            'Necessidade → procedência → escopo → teste. Instalar por instalar é o mesmo risco de rodar qualquer software desconhecido com acesso aos seus dados.',
+        },
+      ],
+    },
   ],
 }

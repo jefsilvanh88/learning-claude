@@ -248,5 +248,65 @@ export const level2: Level = {
         },
       ],
     },
+    {
+      id: '2-5',
+      title: 'Economize tokens',
+      exercises: [
+        {
+          type: 'mc',
+          question: 'O que é um "token" no contexto do Claude?',
+          options: [
+            'A unidade de texto (um pedaço de palavra) que o modelo lê e escreve — é por ela que o uso é medido',
+            'Uma senha temporária de acesso',
+            'Um tipo de emoji especial',
+            'Um plugin do navegador',
+          ],
+          correct: 0,
+          explanation:
+            'Todo texto trocado com o Claude é convertido em tokens. Contexto maior e respostas mais longas significam mais tokens — e mais tokens custam mais tempo e dinheiro.',
+        },
+        {
+          type: 'mc',
+          question: 'Qual hábito mais economiza tokens no dia a dia?',
+          options: [
+            'Escolher o modelo certo para a tarefa: rápido e barato para volume, mais capaz só quando o raciocínio exige',
+            'Sempre usar o modelo mais caro, para garantir qualidade',
+            'Escrever prompts o mais longos possível',
+            'Nunca usar subagentes',
+          ],
+          correct: 0,
+          explanation:
+            'Classificar, extrair, resumir em massa: modelo leve. Arquitetura, debugging difícil: modelo de topo. Usar o mesmo modelo para tudo desperdiça em um dos dois lados.',
+        },
+        {
+          type: 'tf',
+          statement: 'Um CLAUDE.md gigante, com tudo que você já sabe sobre o projeto, sempre ajuda e nunca atrapalha.',
+          correct: false,
+          explanation:
+            'O CLAUDE.md é lido em toda mensagem da sessão. Um arquivo enorme custa tokens toda vez e ainda compete por atenção com o que importa — curto e específico rende mais.',
+        },
+        {
+          type: 'fill',
+          question: 'Complete o comando que resume o histórico da conversa para liberar espaço de contexto:',
+          template: '/___',
+          answers: ['compact'],
+          explanation:
+            '/compact condensa o que já foi dito, mantendo o essencial — menos tokens reenviados a cada nova mensagem da sessão.',
+        },
+        {
+          type: 'mc',
+          question: 'Por que mandar uma busca grande para um subagente também economiza tokens do agente principal?',
+          options: [
+            'Porque só o resumo final volta; a exploração volumosa fica isolada no subagente',
+            'Porque subagentes são gratuitos',
+            'Porque o subagente não usa tokens',
+            'Não economiza nada, dá no mesmo',
+          ],
+          correct: 0,
+          explanation:
+            'A varredura de arquivos e tentativas intermediárias custam tokens no subagente, mas não voltam para o contexto principal — só o relatório final volta.',
+        },
+      ],
+    },
   ],
 }

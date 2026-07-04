@@ -183,5 +183,69 @@ export const level1: Level = {
         },
       ],
     },
+    {
+      id: '1-4',
+      title: 'Projects: contexto que persiste',
+      exercises: [
+        {
+          type: 'mc',
+          question: 'O que é um Project no claude.ai?',
+          options: [
+            'Um espaço com instruções e arquivos compartilhados, que todas as conversas dentro dele podem usar',
+            'Um tipo de assinatura mais cara',
+            'Um jogo dentro do chat',
+            'Um limite de mensagens por dia',
+          ],
+          correct: 0,
+          explanation:
+            'Um Project é um workspace persistente: você define instruções e sobe arquivos de referência uma vez, e toda conversa aberta dentro dele já nasce com esse contexto.',
+        },
+        {
+          type: 'mc',
+          question: 'O que faz sentido colocar dentro de um Project?',
+          options: [
+            'Instruções personalizadas e arquivos de referência do assunto (docs, contratos, código)',
+            'Sua senha do banco',
+            'Nada, Projects são só uma pasta vazia',
+            'Vídeos em alta resolução',
+          ],
+          correct: 0,
+          explanation:
+            'Instruções ("responda sempre em tom formal", "use as normas X") e arquivos de conhecimento (PDFs, planilhas, repositório) — tudo isso vira contexto automático para as conversas do Project.',
+        },
+        {
+          type: 'tf',
+          statement: 'Cada conversa nova dentro de um Project começa do zero, sem acesso aos arquivos que você subiu.',
+          correct: false,
+          explanation:
+            'É o oposto: toda conversa dentro do Project herda as instruções e os arquivos dele. Essa é a razão de existir do recurso.',
+        },
+        {
+          type: 'mc',
+          question: 'Quando um Project vale mais a pena do que um chat solto?',
+          options: [
+            'Para uma pergunta rápida e isolada',
+            'Quando você volta ao mesmo assunto várias vezes: uma pesquisa em andamento, um contrato específico, o material de um curso',
+            'Nunca, chat solto sempre é melhor',
+            'Só para times, nunca sozinho',
+          ],
+          correct: 1,
+          explanation:
+            'O ganho do Project é não repetir contexto. Assunto recorrente com os mesmos documentos de referência é o caso de uso ideal.',
+        },
+        {
+          type: 'order',
+          question: 'Ordene o fluxo de criar e usar um Project:',
+          steps: [
+            'Criar o Project e dar um nome claro',
+            'Definir as instruções personalizadas',
+            'Subir os arquivos de referência do assunto',
+            'Abrir conversas dentro dele sempre que o assunto for esse',
+          ],
+          explanation:
+            'Nomear → instruir → alimentar → conversar. Feito uma vez, cada conversa nova já parte pronta.',
+        },
+      ],
+    },
   ],
 }
